@@ -1,0 +1,21 @@
+.search-container {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  padding: 0 1rem;
+  background-color: #f6f6f6;
+  width: 180px;
+  .search-icon {
+    padding: 0.6rem 0.5rem 0.6rem 0;
+  }
+  input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 100%;
+  }
+  .command-icon {
+    margin-top: 2px;
+    margin-right: 2px;
+  }
+}
