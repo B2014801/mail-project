@@ -1,6 +1,6 @@
 import classNames from "classnames/bind";
 
-import style from "./mail.module.scss";
+import style from "./Mail.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReply, faStar, faVideo } from "@fortawesome/free-solid-svg-icons";
 import {

@@ -12,15 +12,33 @@ import {
   faStar,
   faTrashCan,
 } from "@fortawesome/free-regular-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 import style from "./Home.module.scss";
 import image from "../../assets/images";
 import Search from "../../components/search/Search";
 import mail_list from "../../assets/json/mail_list";
 import MailList from "../../components/mail/MailList";
+import MailDetail from "../../components/mail/MailDetail";
+import { useEffect } from "react";
 
 const cx = classNames.bind(style);
 function Home() {
+  const navigate = useNavigate();
+  const getCookie = (name) => {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(";").shift();
+    return null;
+  };
+
+  useEffect(() => {
+    const userFromCookie = getCookie("current_user");
+    const userFromSS = sessionStorage.getItem("current_user");
+    if (!userFromCookie && !userFromSS) {
+      navigate("/login");
+    }
+  }, [navigate]);
   return (
     <div className={cx("body-wrapper")}>
       <div className={cx("body-container")}>
@@ -185,7 +203,28 @@ function Home() {
               <MailList mail_list={mail_list} />
             </div>
           </div>
-          <div className={cx("col-6")}></div>
+          <div className={cx("col-6", { mail_detail: true })}>
+            <div className={cx("header", { border_bottom: true })}>
+              <div className={cx("action-icon")}>
+                <img src={image.back_icon} alt=""></img>
+                <div className={cx("vertical")}></div>
+                <img src={image.bin_icon} alt=""></img>
+                <img src={image.warning_icon} alt=""></img>
+                <img src={image.trash_icon} alt=""></img>
+                <div className={cx("vertical")}></div>
+                <img src={image.message_icon} alt=""></img>
+                <img src={image.clock_icon} alt=""></img>
+                <img src={image.file_icon} alt=""></img>
+                <div className={cx("vertical")}></div>
+                <img src={image.folder_icon} alt=""></img>
+                <img src={image.tag_icon} alt=""></img>
+                <img src={image.menu_icon} alt=""></img>
+              </div>
+            </div>
+            <div className={cx("right-side-body")}>
+              <MailDetail />
+            </div>
+          </div>
         </div>
       </div>
     </div>

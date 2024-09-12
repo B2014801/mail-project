@@ -26,10 +26,22 @@
     &.border_bottom {
       border-bottom: 1px solid #e5ebf0;
     }
+    .action-icon {
+      img {
+        height: 1.2rem;
+        margin-right: 1rem;
+      }
+      .vertical {
+        margin-right: 1rem;
+        height: 1.5rem;
+        width: 1px;
+        background-color: #e5ebf0;
+      }
+    }
   }
   .left-side-body,
   .right-side-body {
-    height: calc(100vh - 5rem);
+    height: calc(100vh - 5.5rem);
   }
   .left-side {
     width: 20%;
@@ -192,7 +204,6 @@
   //   display: block;
   // }
 }
-
 .footer > div {
   padding: 0.2rem 1rem;
 }
