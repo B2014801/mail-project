@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/mail-project/static/css/main.9715ebee.css",
+    "main.js": "/mail-project/static/js/main.e1c70b18.js",
+    "static/js/453.f4729f43.chunk.js": "/mail-project/static/js/453.f4729f43.chunk.js",
+    "static/media/mail_detail_img1.png": "/mail-project/static/media/mail_detail_img1.bf7e1965cb26b2a5141b.png",
+    "static/media/attach3.PNG": "/mail-project/static/media/attach3.c22150439f7e578c33a6.PNG",
+    "static/media/attach1.PNG": "/mail-project/static/media/attach1.b47881f48f43fa6b29d9.PNG",
+    "static/media/attach2.PNG": "/mail-project/static/media/attach2.980bff271f44b4b907a2.PNG",
+    "static/media/logo.PNG": "/mail-project/static/media/logo.92ae64087f11708dee25.PNG",
+    "index.html": "/mail-project/index.html",
+    "static/media/arrow-turn.svg": "/mail-project/static/media/arrow-turn.fc2273eb06660ffce772bbbabe7a008a.svg",
+    "main.9715ebee.css.map": "/mail-project/static/css/main.9715ebee.css.map",
+    "main.e1c70b18.js.map": "/mail-project/static/js/main.e1c70b18.js.map",
+    "453.f4729f43.chunk.js.map": "/mail-project/static/js/453.f4729f43.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9715ebee.css",
+    "static/js/main.e1c70b18.js"
+  ]
+}
