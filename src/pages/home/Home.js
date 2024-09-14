@@ -2,12 +2,21 @@ import classNames from "classnames/bind";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAngleDown,
+  faArrowLeft,
+  faEllipsisVertical,
+  faExclamationCircle,
+  faFolderPlus,
   faInbox,
+  faMessage,
   faPlus,
+  faTag,
+  faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faClock,
   faFile,
+  faFileAlt,
+  faMoon,
   faPaperPlane,
   faStar,
   faTrashCan,
@@ -20,11 +29,12 @@ import Search from "../../components/search/Search";
 import mail_list from "../../assets/json/mail_list";
 import MailList from "../../components/mail/MailList";
 import MailDetail from "../../components/mail/MailDetail";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const cx = classNames.bind(style);
 function Home() {
   const navigate = useNavigate();
+  const [darkMode, setDarkMode] = useState(false);
   const getCookie = (name) => {
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);
@@ -39,6 +49,19 @@ function Home() {
       navigate("/login");
     }
   }, [navigate]);
+
+  useEffect(() => {
+    const theme = localStorage.getItem("theme");
+    if (theme === "dark") {
+      setDarkMode(true);
+      document.body.classList.add("dark-theme");
+    }
+  }, []);
+  const handleToggleTheme = () => {
+    setDarkMode((prev) => !prev);
+    document.body.classList.toggle("dark-theme");
+    localStorage.setItem("theme", darkMode ? "light" : "dark");
+  };
   return (
     <div className={cx("body-wrapper")}>
       <div className={cx("body-container")}>
@@ -48,7 +71,18 @@ function Home() {
               <img className={cx("logo")} src={image.logo} alt=""></img>
               <h4>Mail Box</h4>
             </div>
-            <img className={cx("note-icon")} src={image.note_icon} alt=""></img>
+            <div>
+              <FontAwesomeIcon
+                className={cx("moon-icon")}
+                icon={faMoon}
+                onClick={handleToggleTheme}
+              />
+              <img
+                className={cx("note-icon")}
+                src={image.note_icon}
+                alt=""
+              ></img>
+            </div>
           </div>
           <div className={cx("left-side-body")}>
             <div className={cx("hr", { margin_0: true })}>
@@ -134,12 +168,12 @@ function Home() {
                 </div>
                 <div className={cx("category-item")}>
                   <div>
-                    <span>Folder 1</span> <span>2</span>
+                    <div>Folder 1</div> <span>2</span>
                   </div>
                 </div>
                 <div className={cx("category-item")}>
                   <div>
-                    <span>Folder 2</span> <span>2</span>
+                    <div>Folder 2</div> <span>2</span>
                   </div>
                 </div>
               </div>
@@ -157,12 +191,12 @@ function Home() {
                 </div>
                 <div className={cx("category-item")}>
                   <div>
-                    <span>Label 1</span> <span>2</span>
+                    <div>Label 1</div> <span>2</span>
                   </div>
                 </div>
                 <div className={cx("category-item")}>
                   <div>
-                    <span>Label 2</span> <span>2</span>
+                    <div>Label 2</div> <span>2</span>
                   </div>
                 </div>
               </div>
@@ -178,7 +212,9 @@ function Home() {
                   </div>
                   <div>
                     <h5>Mus</h5>
-                    <p>musmuliadyjahi@gmail.c...</p>
+                    <p className={cx("account-email")}>
+                      musmuliadyjahi@gmail.c...
+                    </p>
                   </div>
                 </div>
                 <FontAwesomeIcon icon={faAngleDown} />
@@ -194,7 +230,7 @@ function Home() {
           <div className={cx("col-4")}>
             <div className={cx("header", { border_bottom: true })}>
               <div>
-                <h4>Inbox</h4>{" "}
+                <h4>Inbox</h4>
                 <span className={cx("total-unread")}>422 Unread</span>
               </div>
               <Search />
@@ -206,19 +242,19 @@ function Home() {
           <div className={cx("col-6", { mail_detail: true })}>
             <div className={cx("header", { border_bottom: true })}>
               <div className={cx("action-icon")}>
-                <img src={image.back_icon} alt=""></img>
+                <FontAwesomeIcon icon={faArrowLeft} />
                 <div className={cx("vertical")}></div>
-                <img src={image.bin_icon} alt=""></img>
-                <img src={image.warning_icon} alt=""></img>
-                <img src={image.trash_icon} alt=""></img>
+                <FontAwesomeIcon icon={faTrash} />
+                <FontAwesomeIcon icon={faExclamationCircle} />
+                <FontAwesomeIcon icon={faTrashCan} />
                 <div className={cx("vertical")}></div>
-                <img src={image.message_icon} alt=""></img>
-                <img src={image.clock_icon} alt=""></img>
-                <img src={image.file_icon} alt=""></img>
+                <FontAwesomeIcon icon={faMessage} />
+                <FontAwesomeIcon icon={faClock} />
+                <FontAwesomeIcon icon={faFileAlt} />
                 <div className={cx("vertical")}></div>
-                <img src={image.folder_icon} alt=""></img>
-                <img src={image.tag_icon} alt=""></img>
-                <img src={image.menu_icon} alt=""></img>
+                <FontAwesomeIcon icon={faFolderPlus} />
+                <FontAwesomeIcon icon={faTag} />
+                <FontAwesomeIcon icon={faEllipsisVertical} />
               </div>
             </div>
             <div className={cx("right-side-body")}>

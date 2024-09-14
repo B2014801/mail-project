@@ -7,9 +7,11 @@ import {
   faImage,
   faStar as faStarRegular,
 } from "@fortawesome/free-regular-svg-icons";
+import { useState } from "react";
 
 const cx = classNames.bind(style);
 function MailList({ mail_list }) {
+  const [active] = useState(3);
   const getStatusIcon = (mail) => {
     let icons = [];
     if (mail.idmail_list?.length > 0) {
@@ -33,9 +35,14 @@ function MailList({ mail_list }) {
   };
   return (
     <div className={cx("mail-list")}>
-      {mail_list.map((mail) => (
-        <div className={cx("mail-container")}>
-          <div className={cx("mail")}>
+      {mail_list.map((mail, index) => (
+        <div className={cx("mail-container", { active: active === index })}>
+          <div
+            className={cx("mail", {
+              viewed: mail.viewed,
+              border_none: active === index + 1,
+            })}
+          >
             <div className={cx("mail-status")}>{getStatusIcon(mail)}</div>
             <div className={cx("mail-content")}>
               <h4>

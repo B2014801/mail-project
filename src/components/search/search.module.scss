@@ -3,7 +3,8 @@
   align-items: center;
   border-radius: 8px;
   padding: 0 1rem;
-  background-color: #f6f6f6;
+  background-color: var(--grey-color);
+  color: var(--subtext-color);
   width: 180px;
   .search-icon {
     padding: 0.6rem 0.5rem 0.6rem 0;

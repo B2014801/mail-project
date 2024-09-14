@@ -19,10 +19,10 @@ function MailDetail() {
             <div className={cx("account-infor")}>
               <div>
                 <h5>Opal Camera</h5>
-                <span>opalcamera@dot.com</span>
+                <span className={cx("email")}>opalcamera@dot.com</span>
               </div>
               <div>
-                <span>To: </span>
+                <span className={cx("to")}>To: </span>
                 <h6>
                   Me <FontAwesomeIcon icon={faAngleDown} />
                 </h6>
@@ -31,7 +31,7 @@ function MailDetail() {
           </div>
           <div className={cx("mail-detail-header-right")}>
             <FontAwesomeIcon icon={faPaperclip} />
-            <p>Dec 23, 09:20PM</p>
+            <p className={cx("time")}>Dec 23, 09:20PM</p>
             <div className={cx("vertical")}></div>
             <img
               className={cx("arrow-turn-left")}
@@ -83,9 +83,9 @@ function MailDetail() {
             </div>
             <div className={cx("attach-item")}>
               <div>
-                <img src={image.attach1} alt=""></img>
+                <img src={image.attach2} alt=""></img>
                 <div>
-                  <p>Clip and Go</p>
+                  <p>Teenie-Tiny-1</p>
                   <p>
                     <span>PNG </span>
                     <span>25,6MB</span>
@@ -95,9 +95,9 @@ function MailDetail() {
             </div>
             <div className={cx("attach-item")}>
               <div>
-                <img src={image.attach1} alt=""></img>
+                <img src={image.attach3} alt=""></img>
                 <div>
-                  <p>Clip and Go</p>
+                  <p>Teenie- Tiny-2</p>
                   <p>
                     <span>PNG </span>
                     <span>25,6MB</span>

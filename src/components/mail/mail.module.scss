@@ -11,7 +11,13 @@
 
   &:not(:last-child) {
     .mail {
-      border-bottom: 1px solid #e5ebf0;
+      border-bottom: 1px solid var(--border-color);
+    }
+  }
+  &.active {
+    background-color: var(--grey-color);
+    .mail {
+      border: none;
     }
   }
 }
@@ -43,6 +49,14 @@
       color: #ccc;
     }
   }
+  &.viewed {
+    .mail-time {
+      color: var(--subtext-color);
+    }
+  }
+  &.border_none {
+    border: none !important;
+  }
   .mail-content {
     width: 90%;
     h4 {
@@ -61,6 +75,7 @@
       font-size: 14px;
     }
     p {
+      color: var(--subtext-color);
       margin: 0;
       font-size: 14px;
       line-height: 1.2rem;
@@ -69,7 +84,7 @@
     .mail-attached {
       padding: 0.2rem 0.6rem;
       background-color: #f6f6f6;
-      border: 1px solid #e5ebf0;
+      border: 1px solid var(--border-color);
 
       border-radius: 18px;
     }
@@ -97,6 +112,7 @@
   display: flex;
   h5 {
     margin: 0;
+    font-size: 1rem;
   }
   p {
     margin: 0;
@@ -106,11 +122,19 @@
       display: flex;
       align-items: center;
       h6 {
-        margin: 0;
+        font-size: 14px;
+        margin: 0 4px;
       }
       &:first-child {
         margin-bottom: 0.2rem;
       }
+    }
+    .email {
+      margin-left: 4px;
+      color: var(--subtext-color);
+    }
+    .to {
+      color: var(--subtext-color);
     }
   }
 }
@@ -131,7 +155,7 @@
 }
 .mail-detail-header {
   justify-content: space-between;
-  border-bottom: 1px solid #e5ebf0;
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: 1rem;
 }
 .mail-detail-header,
@@ -152,12 +176,22 @@
   > *:not(:last-child) {
     margin-right: 1rem;
   }
+  .time {
+    font-size: 0.8rem;
+  }
+  svg,
+  .time {
+    color: var(--subtext-color);
+  }
+  img {
+    opacity: 0.4;
+  }
 }
 .vertical {
   margin-right: 1rem;
   height: 1.5rem;
   width: 1px;
-  background-color: #e5ebf0;
+  background-color: var(--border-color);
 }
 .mail-detail-img-container {
   display: flex;
@@ -184,7 +218,7 @@
   > div {
     border-radius: 8px;
     padding: 2px;
-    background-color: #eeeeee;
+    background-color: var(--grey-color);
 
     img {
       margin-right: 0.5rem;
@@ -193,6 +227,10 @@
     p {
       margin-top: 0;
       margin-bottom: 2px;
+    }
+    span {
+      font-size: 0.8rem;
+      color: var(--subtext-color);
     }
   }
 }
@@ -212,8 +250,9 @@
   p {
     text-align: justify;
   }
-  a {
-    color: black;
+  a,
+  p {
+    color: var(--text-dark-color);
   }
 }
 .mail-detail-title {
