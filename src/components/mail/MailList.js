@@ -36,7 +36,10 @@ function MailList({ mail_list }) {
   return (
     <div className={cx("mail-list")}>
       {mail_list.map((mail, index) => (
-        <div className={cx("mail-container", { active: active === index })}>
+        <div
+          className={cx("mail-container", { active: active === index })}
+          key={`${mail.id}-${index}`}
+        >
           <div
             className={cx("mail", {
               viewed: mail.viewed,

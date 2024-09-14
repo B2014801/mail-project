@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import classNames from "classnames/bind";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -23,12 +23,17 @@ function Login() {
     email: "",
     password: "",
   });
+
+  useEffect(() => {
+    document.title = "Login";
+  }, []);
   const setCookie = (name, value, days) => {
     const date = new Date();
     date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
     const expires = "expires=" + date.toUTCString();
     document.cookie = `${name}=${value}; ${expires}; path=/`;
   };
+
   const handleLogin = async (event) => {
     event.preventDefault();
 

@@ -56,6 +56,7 @@ function Home() {
       setDarkMode(true);
       document.body.classList.add("dark-theme");
     }
+    document.title = "Mail";
   }, []);
   const handleToggleTheme = () => {
     setDarkMode((prev) => !prev);
