@@ -1,6 +1,6 @@
 import classNames from "classnames/bind";
 
-import style from "./Mail.module.scss";
+import style from "./mail.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReply, faStar, faVideo } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -11,7 +11,7 @@ import { useState } from "react";
 
 const cx = classNames.bind(style);
 function MailList({ mail_list }) {
-  const [active] = useState(3);
+  const [active] = useState(4);
   const getStatusIcon = (mail) => {
     let icons = [];
     if (mail.idmail_list?.length > 0) {
@@ -63,16 +63,14 @@ function MailList({ mail_list }) {
               <p>{mail.brief}</p>
               {mail.attached?.length > 0 ? (
                 <>
-                  <div className={cx("mail-attached")}>
+                  <div className={cx("mail-attached",{video:mail.attached[0].type === "video",image:mail.attached[0].type !== "video"})}>
                     <span>
                       {mail.attached[0].type === "video" ? (
                         <FontAwesomeIcon
-                          className={cx("video")}
                           icon={faVideo}
                         />
                       ) : (
                         <FontAwesomeIcon
-                          className={cx("image")}
                           icon={faImage}
                         />
                       )}

@@ -1,5 +1,5 @@
 import logo from "./logo.PNG";
-import note_icon from "./note-icon.png";
+import note_icon from "./note-icon.PNG";
 import avt from "./avt.jpg";
 
 import arrow_turn from "./arrow-turn.svg";

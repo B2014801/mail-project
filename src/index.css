@@ -6,6 +6,7 @@
     --active-background-color:#f3f2fa;
     --active-button-color:white;
     --grey-color:#f6f6f6;
+    --grey-to-black-color:#f6f6f6;
     --eee-color:#eeeeee;
     --border-color:#e5ebf0;
 }
@@ -16,6 +17,7 @@
     --text-dark-color:white;
     --active-background-color:#1d2030;
     --grey-color: #181c21;
+    --grey-to-black-color: black;
     --active-button-color:#262a2f;
     --eee-color: black;
     --border-color:#262a2f;

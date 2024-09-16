@@ -19,6 +19,9 @@
     .mail {
       border: none;
     }
+    .mail-attached,.mail-attached-total{
+      background-color: var(--background-color)!important;
+    }
   }
 }
 .mail {
@@ -31,7 +34,9 @@
     align-items: center;
     margin-right: 0.5rem;
     width: 18px;
-
+    >svg{
+      color: var(--subtext-color);
+    }
     > * {
       margin-top: 0.3rem;
       margin-bottom: 0.5rem;
@@ -83,7 +88,8 @@
     .mail-attached-total,
     .mail-attached {
       padding: 0.2rem 0.6rem;
-      background-color: #f6f6f6;
+      background-color: var(--grey-color);
+      color: var(--text-dark-color);
       border: 1px solid var(--border-color);
 
       border-radius: 18px;
@@ -92,15 +98,18 @@
       display: inline-block;
       margin-top: 0.5rem;
       margin-right: 0.5rem;
-      span {
-        margin-right: 4px;
-
-        .video {
+      &.video{
+        span{
           color: #4834f7;
         }
-        .image {
+      }
+      &.image{
+        span{
           color: #d34040;
         }
+      }
+      span {
+        margin-right: 4px;
       }
     }
   }
@@ -253,6 +262,9 @@
   a,
   p {
     color: var(--text-dark-color);
+  }
+  a{
+    font-weight: bold;
   }
 }
 .mail-detail-title {

@@ -1,7 +1,7 @@
 import classNames from "classnames/bind";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import style from "./Search.module.scss";
+import style from "./search.module.scss";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const cx = classNames.bind(style);

@@ -37,10 +37,9 @@ const mail_list = [
   },
   {
     id: 4,
-    from: "Gil Huybrecht",
-    title: "The basic of art direction",
-    brief:
-      "Introducing the Tadpole the smallest webcam ever build. With a category-first directional microphone,...",
+    from: "10x Designers",
+    title: "Only today: 50% OFF our Pro subscription!",
+    brief:"Hi friend, Thank you so much for supporting 10xDesigners this first year. As a thank you, we're...",
     time: "Dec 26",
     viewed: true,
     starred: true,
@@ -52,7 +51,7 @@ const mail_list = [
     from: "Gil Huybrecht",
     title: "The basic of art direction",
     brief:
-      "We are excited to announce that AlignUI Design System Beta Lauches Tomorrow. The moment we...",
+      "Introducing the Tadpole the smallest webcam ever build. With a category-first directional microphone...",
     time: "Dec 26",
     viewed: true,
     starred: false,

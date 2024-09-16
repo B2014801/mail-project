@@ -1,6 +1,6 @@
 import classNames from "classnames/bind";
 
-import style from "./Mail.module.scss";
+import style from "./mail.module.scss";
 
 import image from "../../assets/images";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
